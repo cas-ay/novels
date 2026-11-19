@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ترجمة الروايات | @cas_ay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0b0c10;
+            --bg-card: #14161d;
+            --border-color: #252836;
+            --accent: #e09f3e;
+            --accent-hover: #f3b350;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        /* الهيدر */
+        header {
+            background: linear-gradient(180deg, #161922 0%, var(--bg-main) 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        header h1 span {
+            color: var(--accent);
+        }
+
+        header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            font-size: 1rem;
+        }
+
+        .tg-btn {
+            display: inline-block;
+            background-color: #229ED9;
+            color: #fff;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .tg-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            border-right: 4px solid var(--accent);
+            padding-right: 0.8rem;
+        }
+
+        /* شبكة الروايات */
+        .novels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .novel-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .novel-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .novel-cover {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            background-color: #1e212b;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .novel-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .novel-meta {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .novel-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 0.2rem;
+        }
+
+        .novel-en {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            direction: ltr;
+            text-align: right;
+        }
+
+        .novel-desc {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        /* أزرار التحميل */
+        .download-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+        }
+
+        .btn {
+            text-align: center;
+            padding: 0.55rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+
+        .btn-pdf {
+            background-color: var(--accent);
+            color: #0b0c10;
+        }
+
+        .btn-pdf:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-epub {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-epub:hover {
+            border-color: var(--text-main);
+        }
+
+        /* الفوتر */
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>مكتبة <span>@cas_ay</span> للروايات المترجمة</h1>
+        <p>ترجمة أدبية منقحة وتعريب بصري متكامل لأبرز الروايات الخفيفة اليابانية الغير المعروفة، متوفرة مجاناً بصيغتي PDF و EPUB.</p>
+        <a href="https://t.me/cas_ay" target="_blank" class="tg-btn">انضم لقناة التليجرام الرسمية</a>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title">الأعمال المترجمة والمكتملة</h2>
+        
+        <div class="novels-grid">
+
+            <!-- الرواية 1 -->
+            <article class="novel-card">
+                <img src="covers/mimosa.jpg" alt="اعترافات الميموزا" class="novel-cover">
+                <div class="novel-content">
+                    <div class="novel-meta">5 مجلدات مكتملة • دراما، نفسي</div>
+                    <h3 class="novel-title">اعترافات الميموزا</h3>
+                    <div class="novel-en">The Mimosa Confessions</div>
+                    <p class="novel-desc">رحلة إنسانية عميقة تلامس صراعات الهوية والقبول، حيث يقف الفتى ساكوما بجانب صديق طفولته في مواجهة نظرات المجتمع وأسرار الماضي.</p>
+                    <div class="download-group">
+                        <a href="رابط_التحميل_هنا" target="_blank" class="btn btn-pdf">تحميل PDF</a>
+                        <a href="رابط_التحميل_هنا" target="_blank" class="btn btn-epub">تحميل EPUB</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- الرواية 2 -->
+            <article class="novel-card">
+                <img src="covers/summer.jpeg" alt="نفق إلى الصيف، مخرج الوداع" class="novel-cover">
+                <div class="novel-content">
+                    <div class="novel-meta">مجلد واحد مكتمل • خيال علمي، دراما</div>
+                    <h3 class="novel-title">نفق إلى الصيف، مخرج الوداع</h3>
+                    <div class="novel-en">The Tunnel to Summer, the Exit of Goodbyes</div>
+                    <p class="novel-desc">نفق غامض يحقق الأمنيات مقابل استهلاك الزمن من عمرك؛ يلتقي بطل مثقل بالندم بفتاة غامضة لاستكشاف أسراره.</p>
+                    <div class="download-group">
+                        <a href="رابط_التحميل_هنا" target="_blank" class="btn btn-pdf">تحميل PDF</a>
+                        <a href="رابط_التحميل_هنا" target="_blank" class="btn btn-epub">تحميل EPUB</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- الرواية 3 -->
+            <article class="novel-card">
+                <img src="covers/spring.jpeg" alt="انتظرني بالأمس في الربيع" class="novel-cover">
+                <div class="novel-content">
+                    <div class="novel-meta">مجلد واحد مكتمل • غموض، سفر عبر الزمن</div>
+                    <h3 class="novel-title">انتظرني بالأمس في الربيع</h3>
+                    <div class="novel-en">Wait For Me Yesterday in Spring</div>
+                    <p class="novel-desc">في جزيرة معزولة، يجد فتى نفسه عالقاً في حلقة زمنية غامضة تدفعه لمحاولة إنقاذ صديقته من مصير مأساوي.</p>
+                    <div class="download-group">
+                        <a href="رابط_التحميل_هنا" target="_blank" class="btn btn-pdf">تحميل PDF</a>
+                        <a href="رابط_التحميل_هنا" target="_blank" class="btn btn-epub">تحميل EPUB</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- الرواية 4 -->
+            <article class="novel-card">
+                <img src="covers/autumn.jpg" alt="خريف في الكهرمان: رحلة في صفر ثانية" class="novel-cover">
+                <div class="novel-content">
+                    <div class="novel-meta">مجلد واحد مكتمل • غموض، خيال علمي</div>
+                    <h3 class="novel-title">خريف في الكهرمان: رحلة في صفر ثانية</h3>
+                    <div class="novel-en">An Autumn in Amber, a Zero-Second Journey</div>
+                    <p class="novel-desc">في تمام الساعة 11:14:36 صباحاً يتوقف الزمن في العالم بأكمله، لينطلق فتى وفتاة متمردة سيراً على الأقدام نحو طوكيو لفك اللغز[cite: 1].</p>
+                    <div class="download-group">
+                        <a href="رابط_التحميل_هنا" target="_blank" class="btn btn-pdf">تحميل PDF</a>
+                        <a href="رابط_التحميل_هنا" target="_blank" class="btn btn-epub">تحميل EPUB</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        جميع الحقوق محفوظة لـ <strong>@cas_ay</strong> © 2026 • الترجمة والتعريب البصري
+    </footer>
+
+</body>
+</html>
